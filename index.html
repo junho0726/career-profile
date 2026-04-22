@@ -5,497 +5,809 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>경력기술서</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+    * {
+        box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-            background: #ffffff;
-            color: #222;
-            line-height: 1.7;
-        }
+    body {
+        margin: 0;
+        font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+        background: #ffffff;
+        color: #222;
+        line-height: 1.7;
+    }
 
-        .wrap {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 24px 80px;
-        }
+    .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 24px 80px;
+    }
 
-        .intro-section {
-            margin-bottom: 56px;
-            padding-bottom: 28px;
-            border-bottom: 1px solid #dbe3ee;
-        }
+    .intro-section {
+        margin-bottom: 56px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid #dbe3ee;
+    }
 
-        .intro-name {
-            margin: 0 0 10px;
-            font-size: 42px;
-            font-weight: 800;
-            color: #111827;
-            line-height: 1.25;
-        }
+    .intro-name {
+        margin: 0 0 10px;
+        font-size: 42px;
+        font-weight: 800;
+        color: #111827;
+        line-height: 1.25;
+    }
 
-        .intro-role {
-            margin: 0 0 14px;
-            font-size: 22px;
-            font-weight: 700;
-            color: #2563eb;
-        }
+    .intro-role {
+        margin: 0 0 14px;
+        font-size: 22px;
+        font-weight: 700;
+        color: #2563eb;
+    }
 
-        .intro-summary {
-            margin: 0 0 18px;
-            font-size: 18px;
-            color: #334155;
-            font-weight: 500;
-        }
+    .intro-summary {
+        margin: 0 0 18px;
+        font-size: 18px;
+        color: #334155;
+        font-weight: 500;
+    }
 
-        .divider {
-            border: 0;
-            border-top: 1px solid #cbd5e1;
-            margin: 18px 0 22px;
-        }
+    .divider {
+        border: 0;
+        border-top: 1px solid #cbd5e1;
+        margin: 18px 0 22px;
+    }
 
-        .info-group {
-            margin-bottom: 18px;
-        }
+    .info-group {
+        margin-bottom: 18px;
+    }
 
-        .info-group:last-child {
-            margin-bottom: 0;
-        }
+    .info-group:last-child {
+        margin-bottom: 0;
+    }
 
-        .info-title {
-            font-size: 18px;
-            font-weight: 800;
-            color: #111827;
-            margin-bottom: 8px;
-        }
+    .info-title {
+        font-size: 18px;
+        font-weight: 800;
+        color: #111827;
+        margin-bottom: 8px;
+    }
 
-        .info-text {
-            font-size: 16px;
-            color: #334155;
-            word-break: break-all;
-        }
+    .info-text {
+        font-size: 16px;
+        color: #334155;
+        word-break: break-all;
+    }
 
-        .info-text a {
-            color: #2563eb;
-            text-decoration: none;
-        }
+    .info-text a {
+        color: #2563eb;
+        text-decoration: none;
+    }
 
-        .info-text a:hover {
-            text-decoration: underline;
-        }
+    .info-text a:hover {
+        text-decoration: underline;
+    }
 
-        .section-title {
-            font-size: 28px;
-            font-weight: 800;
-            color: #2563eb;
-            margin-bottom: 32px;
-        }
+    .info-chip-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
 
-        .career-layout {
-            display: grid;
-            grid-template-columns: 90px 1fr;
-            gap: 24px;
-            position: relative;
-        }
+    .info-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        background: #f8fafc;
+        color: #334155;
+        font-size: 14px;
+        line-height: 1.3;
+        overflow: hidden;
+    }
 
-        .timeline {
-            position: relative;
-            min-height: 100%;
-        }
+    .info-chip-label {
+        display: inline-flex;
+        align-items: center;
+        align-self: stretch;
+        padding: 7px 9px;
+        background: #eff6ff;
+        border-right: 1px solid #dbeafe;
+        color: #2563eb;
+        font-weight: 800;
+    }
 
-        .timeline::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 44px;
-            width: 2px;
-            background: #cbd5e1;
-        }
+    .info-chip-value {
+        padding: 7px 11px;
+    }
 
-        .company-header {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            align-items: flex-start;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
+    .info-chip-value a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-        .company-name {
-            font-size: 34px;
-            font-weight: 800;
-            margin: 0;
-        }
+    .info-chip-value a:hover {
+        color: #2563eb;
+        text-decoration: underline;
+    }
 
-        .company-role {
-            margin-top: 6px;
-            font-size: 18px;
-            color: #475569;
-            font-weight: 600;
-        }
+    .section-title {
+        font-size: 28px;
+        font-weight: 800;
+        color: #2563eb;
+        margin-bottom: 32px;
+    }
 
-        .company-period {
-            font-size: 18px;
-            color: #64748b;
-            white-space: nowrap;
-            padding-top: 8px;
-            font-weight: 600;
-        }
+    .career-layout {
+        display: grid;
+        grid-template-columns: 90px 1fr;
+        gap: 24px;
+        position: relative;
+    }
 
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+    .timeline {
+        position: relative;
+        min-height: 100%;
+    }
 
-        .project-card {
-            position: relative;
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 28px 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        }
+    .timeline::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 44px;
+        width: 2px;
+        background: #cbd5e1;
+    }
 
-        .project-top {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 8px;
-        }
+    .company-header {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+    }
 
-        .project-title {
-            margin: 0;
-            font-size: 24px;
-            font-weight: 800;
-            color: #111827;
-        }
+    .company-name {
+        font-size: 34px;
+        font-weight: 800;
+        margin: 0;
+    }
 
-        .project-period {
-            font-size: 16px;
-            color: #64748b;
-            white-space: nowrap;
-            font-weight: 600;
-        }
+    .company-role {
+        margin-top: 6px;
+        font-size: 18px;
+        color: #475569;
+        font-weight: 600;
+    }
 
-        .project-meta {
-            font-size: 14px;
-            color: #475569;
-            margin-bottom: 8px;
-        }
+    .company-period {
+        font-size: 18px;
+        color: #64748b;
+        white-space: nowrap;
+        padding-top: 8px;
+        font-weight: 600;
+    }
 
-        .project-desc {
-            font-size: 15px;
-            color: #64748b;
-            margin-bottom: 14px;
-        }
+    .project-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
+    .project-card {
+        position: relative;
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 28px 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
 
-        .tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 6px 12px;
-            border-radius: 999px;
-            background: #eff6ff;
-            border: 1px solid #dbeafe;
-            color: #2563eb;
-            font-size: 13px;
-            font-weight: 700;
-        }
+    .project-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 8px;
+    }
 
-        .feature-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            margin-top: 8px;
-            border-top: 1px solid #e5e7eb;
-        }
+    .project-title {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 800;
+        color: #111827;
+    }
 
+    .project-period {
+        font-size: 16px;
+        color: #64748b;
+        white-space: nowrap;
+        font-weight: 600;
+    }
+
+    .project-meta {
+        font-size: 14px;
+        color: #475569;
+        margin-bottom: 8px;
+    }
+
+    .project-desc {
+        font-size: 15px;
+        color: #64748b;
+        margin-bottom: 14px;
+    }
+
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #eff6ff;
+        border: 1px solid #dbeafe;
+        color: #2563eb;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .feature-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 8px;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    .feature-item {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 24px;
+        padding: 22px 0;
+        border-bottom: 1px solid #e5e7eb;
+        align-items: start;
+    }
+
+    .feature-title {
+        font-size: 16px;
+        font-weight: 800;
+        color: #111827;
+        line-height: 1.5;
+    }
+
+    .feature-bullets {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .feature-bullets li {
+        position: relative;
+        padding-left: 16px;
+        margin-bottom: 8px;
+        color: #1f2937;
+        font-size: 15px;
+    }
+
+    .feature-bullets li:last-child {
+        margin-bottom: 0;
+    }
+
+    .feature-bullets li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #111827;
+        font-weight: 700;
+    }
+
+    @media (max-width: 960px) {
         .feature-item {
-            display: grid;
-            grid-template-columns: 260px 1fr;
-            gap: 24px;
-            padding: 22px 0;
-            border-bottom: 1px solid #e5e7eb;
-            align-items: start;
+            grid-template-columns: 1fr;
+            gap: 10px;
         }
 
         .feature-title {
-            font-size: 16px;
-            font-weight: 800;
-            color: #111827;
-            line-height: 1.5;
-        }
-
-        .feature-bullets {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .feature-bullets li {
-            position: relative;
-            padding-left: 16px;
-            margin-bottom: 8px;
-            color: #1f2937;
             font-size: 15px;
         }
 
-        .feature-bullets li:last-child {
-            margin-bottom: 0;
+        .career-layout {
+            grid-template-columns: 1fr;
         }
 
-        .feature-bullets li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #111827;
-            font-weight: 700;
+        .timeline {
+            display: none;
         }
 
-        @media (max-width: 960px) {
-            .feature-item {
-                grid-template-columns: 1fr;
-                gap: 10px;
-            }
-
-            .feature-title {
-                font-size: 15px;
-            }
-
-            .career-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .timeline {
-                display: none;
-            }
-
-            .company-name {
-                font-size: 28px;
-            }
-
-            .project-title {
-                font-size: 20px;
-            }
-
-            .project-card {
-                padding: 22px 20px;
-            }
-
-            .intro-name {
-                font-size: 32px;
-            }
-
-            .intro-role {
-                font-size: 18px;
-            }
-
-            .intro-summary,
-            .info-text {
-                font-size: 15px;
-            }
-        }
-
-
-        .profile-sections {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 56px;
-        }
-
-        .profile-card {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 28px 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        }
-
-        .profile-card-title {
-            margin: 0 0 20px;
+        .company-name {
             font-size: 28px;
-            font-weight: 800;
-            color: #111827;
-            line-height: 1.3;
         }
 
-        .profile-block {
-            margin-bottom: 24px;
+        .project-title {
+            font-size: 20px;
         }
 
-        .profile-block:last-child {
-            margin-bottom: 0;
+        .project-card {
+            padding: 22px 20px;
         }
 
-        .profile-block-title {
-            margin: 0 0 12px;
-            font-size: 22px;
-            font-weight: 800;
-            color: #2563eb;
+        .intro-name {
+            font-size: 32px;
         }
 
-        .profile-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .profile-list li {
-            position: relative;
-            padding-left: 16px;
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: #334155;
-            line-height: 1.7;
-        }
-
-        .profile-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .profile-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: #2563eb;
-            font-weight: 700;
-        }    
-
-
-        .skill-category {
-            margin-bottom: 20px;
-        }
-
-        .skill-category:last-child {
-            margin-bottom: 0;
-        }
-
-        .skill-category-title {
-            margin: 0 0 10px;
+        .intro-role {
             font-size: 18px;
-            font-weight: 800;
-            color: #111827;
         }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
+        .intro-summary,
+        .info-text {
+            font-size: 15px;
         }
+    }
 
-        .skill-tag {
-            display: inline-flex;
-            align-items: center;
-            padding: 7px 12px;
-            border-radius: 999px;
-            background: #eff6ff;
-            border: 1px solid #dbeafe;
-            color: #2563eb;
-            font-size: 14px;
-            font-weight: 700;
-        }
 
-        .education-section {
-            margin-top: 56px;
-        }
+    .profile-sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 56px;
+    }
 
+    .profile-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 28px 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .profile-card-title {
+        margin: 0 0 20px;
+        font-size: 28px;
+        font-weight: 800;
+        color: #111827;
+        line-height: 1.3;
+    }
+
+    .profile-block {
+        margin-bottom: 24px;
+    }
+
+    .profile-block:last-child {
+        margin-bottom: 0;
+    }
+
+    .profile-block-title {
+        margin: 0 0 12px;
+        font-size: 22px;
+        font-weight: 800;
+        color: #2563eb;
+    }
+
+    .profile-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .profile-list li {
+        position: relative;
+        padding-left: 16px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #334155;
+        line-height: 1.7;
+    }
+
+    .profile-list li:last-child {
+        margin-bottom: 0;
+    }
+
+    .profile-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #2563eb;
+        font-weight: 700;
+    }
+
+
+    .skill-category {
+        margin-bottom: 20px;
+    }
+
+    .skill-category:last-child {
+        margin-bottom: 0;
+    }
+
+    .skill-category-title {
+        margin: 0 0 10px;
+        font-size: 18px;
+        font-weight: 800;
+        color: #111827;
+    }
+
+    .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .skill-tag {
+        display: inline-flex;
+        align-items: center;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: #eff6ff;
+        border: 1px solid #dbeafe;
+        color: #2563eb;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .education-section {
+        margin-top: 56px;
+    }
+
+    .education-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 20px;
+        padding: 28px 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .education-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .education-item {
+        padding: 20px 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .education-item:first-child {
+        padding-top: 0;
+    }
+
+    .education-item:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .education-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 6px;
+    }
+
+    .education-title {
+        font-size: 18px;
+        font-weight: 800;
+        color: #111827;
+        line-height: 1.4;
+    }
+
+    .education-period {
+        flex: 0 0 150px;
+        font-size: 15px;
+        color: #64748b;
+        white-space: nowrap;
+        font-weight: 600;
+        line-height: 1.4;
+        padding-top: 2px;
+        text-align: left;
+    }
+
+    .education-desc {
+        font-size: 15px;
+        color: #334155;
+        line-height: 1.7;
+    }
+
+    @media (max-width: 960px) {
         .education-card {
-            background: #fff;
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 28px 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-        }
-
-        .education-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
-
-        .education-item {
-            padding: 20px 0;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .education-item:first-child {
-            padding-top: 0;
-        }
-
-        .education-item:last-child {
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .education-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-bottom: 6px;
+            padding: 22px 20px;
         }
 
         .education-title {
-            font-size: 18px;
-            font-weight: 800;
-            color: #111827;
+            font-size: 16px;
         }
 
-        .education-period {
-            font-size: 15px;
-            color: #64748b;
-            white-space: nowrap;
-            font-weight: 600;
-        }
-
+        .education-period,
         .education-desc {
-            font-size: 15px;
-            color: #334155;
-            line-height: 1.7;
+            font-size: 14px;
         }
+    }
 
-        @media (max-width: 960px) {
-            .education-card {
-                padding: 22px 20px;
-            }
+    .education-section {
+        margin-top: 72px;
+        padding-top: 40px;
+        border-top: 2px solid #e5e7eb;
+    }
 
-            .education-title {
-                font-size: 16px;
-            }
+    .education-section .section-title {
+        margin-bottom: 24px;
+    }
 
-            .education-period,
-            .education-desc {
-                font-size: 14px;
-            }
-        }
+@page {
+  size: A4;
+  margin: 10mm;
+}
 
-        .education-section {
-            margin-top: 72px;
-            padding-top: 40px;
-            border-top: 2px solid #e5e7eb;
-        }
+@media print {
 
-        .education-section .section-title {
-            margin-bottom: 24px;
-        }
-    </style>
+  html,
+  body {
+    background: #fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    margin: 0;
+  }
+
+  .wrap {
+    max-width: 100%;
+    padding: 0;
+    overflow: visible;
+  }
+
+  a,
+  a:visited {
+    color: #2563eb;
+    text-decoration: underline;
+    pointer-events: auto;
+  }
+
+  .info-chip-list {
+    gap: 6px;
+  }
+
+  .info-chip {
+    font-size: 12.5px;
+  }
+
+  .info-chip-label {
+    padding: 5px 7px;
+  }
+
+  .info-chip-value {
+    padding: 5px 8px;
+  }
+
+  .timeline {
+    display: none;
+  }
+
+  .career-layout {
+    display: block;
+  }
+
+  .profile-sections {
+    display: grid;
+    grid-template-columns: 0.88fr 1.12fr;
+    gap: 18px;
+    margin-bottom: 0;
+    align-content: start;
+  }
+
+  .project-card,
+  .profile-card,
+  .education-card {
+    border: 1px solid #dbe3ee;
+    border-radius: 12px;
+    box-shadow: none;
+    padding: 14px 16px;
+    margin-bottom: 8px;
+
+    break-inside: auto;
+    page-break-inside: auto;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    overflow: visible;
+  }
+
+  .project-list,
+  .feature-list,
+  .feature-bullets,
+  .profile-list,
+  .education-list {
+    display: block;
+    overflow: visible;
+  }
+
+  .feature-item {
+    display: block;
+    padding: 8px 0;
+    break-inside: auto;
+    page-break-inside: auto;
+    overflow: visible;
+  }
+
+  .education-item {
+    break-inside: auto;
+    page-break-inside: auto;
+    overflow: visible;
+  }
+
+  .feature-title {
+    margin-bottom: 6px;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  p, li {
+    break-inside: auto;
+    page-break-inside: auto;
+    orphans: 2;
+    widows: 2;
+  }
+
+  h1, h2, h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .project-title {
+    font-size: 18px;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .feature-bullets li,
+  .profile-list li {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  .project-meta,
+  .project-period {
+    font-size: 12.5px;
+  }
+
+  .tags {
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+
+  .tag {
+    padding: 3px 7px;
+    font-size: 11px;
+  }
+
+  .profile-card {
+    padding: 22px 24px;
+  }
+
+  .profile-card-title {
+    font-size: 24px;
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+
+  .profile-block {
+    margin-bottom: 15px;
+  }
+
+  .profile-block-title {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .profile-list li {
+    font-size: 13.2px;
+    line-height: 1.52;
+    margin-bottom: 5px;
+    padding-left: 14px;
+  }
+
+  .skill-category {
+    margin-bottom: 14px;
+  }
+
+  .skill-category-title {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .skill-tags {
+    gap: 7px;
+  }
+
+  .skill-tags[style] {
+    margin-top: 5px !important;
+  }
+
+  .skill-tag {
+    padding: 6px 10px;
+    font-size: 12.3px;
+    line-height: 1.25;
+  }
+
+  .profile-sections + .section-title {
+    break-before: page;
+    page-break-before: always;
+    margin-top: 0;
+  }
+
+  .intro-section {
+    margin-bottom: 24px;
+  }
+
+  .section-title {
+    margin: 24px 0 12px;
+  }
+
+  .education-section {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top-width: 1px;
+  }
+
+  .education-section .section-title {
+    margin: 0 0 8px;
+  }
+
+  .education-card {
+    padding: 10px 14px;
+    margin-bottom: 0;
+  }
+
+  .education-item {
+    padding: 7px 0;
+  }
+
+  .education-section + .education-section {
+    break-before: auto;
+    page-break-before: auto;
+    margin-top: 16px;
+    padding-top: 12px;
+  }
+
+  .wrap > :last-child,
+  .education-section:last-child,
+  .education-section:last-child .education-card,
+  .education-section:last-child .education-item {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    break-after: auto;
+    page-break-after: auto;
+    break-before: auto;
+    page-break-before: auto;
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  body::after,
+  .wrap::after {
+    content: none;
+    display: none;
+  }
+}
+</style>
+
+
 </head>
 
 <body>
@@ -504,11 +816,11 @@
         <section class="intro-section">
             <h1 class="intro-name">김준호 Junho Kim, BackEnd Developer</h1>
             <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-            
+
                 <p class="intro-summary" style="margin:0;">
                     서비스 이용 흐름을 고려해 개발하는 백엔드 개발자
                 </p>
-            
+
                 <a href="https://junho0726.github.io/cover-letter/" target="_blank" style="
                 padding:6px 14px;
                 background:#10b981;
@@ -520,24 +832,24 @@
                 ">
                     ✍️ 자기소개서 보기
                 </a>
-            
+
             </div>
 
             <hr class="divider" />
 
             <div class="info-group">
                 <div class="info-title">Contacts</div>
-                <div class="info-text">
-                    Email. wnsgh3156@gmail.com</a> |
-                    Phone. 010-5188-3156</a>
+                <div class="info-text info-chip-list">
+                    <div class="info-chip"><span class="info-chip-label">Email</span><span class="info-chip-value">wnsgh3156@gmail.com</span></div>
+                    <div class="info-chip"><span class="info-chip-label">Phone</span><span class="info-chip-value">010-5188-3156</span></div>
                 </div>
             </div>
 
             <div class="info-group">
                 <div class="info-title">Channel</div>
-                <div class="info-text">
-                    Blog. <a href="https://velog.io/@developer_jun07"
-                        target="_blank">https://velog.io/@developer_jun07</a>
+                <div class="info-text info-chip-list">
+                    <div class="info-chip"><span class="info-chip-label">Blog</span><span class="info-chip-value"><a href="https://velog.io/@developer_jun07"
+                        target="_blank">https://velog.io/@developer_jun07</a></span></div>
                 </div>
             </div>
         </section>
@@ -545,7 +857,7 @@
         <section class="profile-sections">
             <div class="profile-card">
                 <h2 class="profile-card-title">Technical Skills</h2>
-        
+
                 <div class="skill-category">
                     <h3 class="skill-category-title">Backend & Frameworks</h3>
                     <div class="skill-tags">
@@ -559,7 +871,7 @@
                         <span class="skill-tag">CSS</span>
                     </div>
                 </div>
-        
+
                 <div class="skill-category">
                     <h3 class="skill-category-title">Infrastructure & DevOps</h3>
                     <div class="skill-tags" style="margin-top:10px;">
@@ -574,7 +886,7 @@
                         <span class="skill-tag">Spring Rest Docs</span>
                     </div>
                 </div>
-        
+
                 <div class="skill-category">
                     <h3 class="skill-category-title">Database Management</h3>
                     <div class="skill-tags">
@@ -587,10 +899,10 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="profile-card">
                 <h2 class="profile-card-title">보유 역량 요약</h2>
-        
+
                 <div class="profile-block">
                     <h3 class="profile-block-title">Backend Engineering</h3>
                     <ul class="profile-list">
@@ -601,7 +913,7 @@
                         <li>인증서(SSL) 설정을 통해 도메인 연결 및 HTTPS 보안 설정 완료</li>
                     </ul>
                 </div>
-        
+
                 <div class="profile-block">
                     <h3 class="profile-block-title">Software Development</h3>
                     <ul class="profile-list">
@@ -610,7 +922,7 @@
                         <li>Jira를 활용한 프로젝트 관리 및 협업 경험</li>
                     </ul>
                 </div>
-        
+
                 <div class="profile-block">
                     <h3 class="profile-block-title">Machine Learning Engineering</h3>
                     <ul class="profile-list">
@@ -1178,13 +1490,13 @@
                             </div>
                         </div>
                     </section>
-        
+
                 </div>
             </div>
         </div>
         <section class="education-section">
             <div class="section-title">Education</div>
-        
+
             <div class="education-card">
                 <div class="education-list">
                     <div class="education-item">
@@ -1194,7 +1506,7 @@
                         </div>
                         <div class="education-desc">GPA: 3.81 / 4.5</div>
                     </div>
-        
+
                     <div class="education-item">
                         <div class="education-top">
                             <div class="education-title">디지털컨버전스 기반 자바 웹 개발 과정</div>
@@ -1207,7 +1519,7 @@
         </section>
         <section class="education-section">
             <div class="section-title">Certificates</div>
-        
+
             <div class="education-card">
                 <div class="education-list">
                     <div class="education-item">
